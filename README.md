@@ -10,7 +10,7 @@ In the installation inventory file you will use to install a containerized Ansib
 [all:vars]
 controller_postinstall=true
 controller_postinstall_repo_url=https://github.com/ansible/product-demos-postinstall.git
-controller_postinstall_dir=./product-demos-postinstall
+controller_postinstall_dir=/tmp/product-demos-postinstall  # or another fully-qualified path of your choice
 ```
 
 When you [install containerized Ansible Automation Platform](https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.4/html/containerized_ansible_automation_platform_installation_guide/aap-containerized-installation#installing-containerized-aap_aap-containerized-installation), this repository will be cloned and used to configure the automation controller with the Ansible Product Demos configuration components.
