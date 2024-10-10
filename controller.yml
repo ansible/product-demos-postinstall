@@ -33,9 +33,13 @@ controller_credentials:
 controller_execution_environments:
   - name: Product Demos EE
     image: '{{ apd_ee_image }}'
+  - name: product-demos
+    image: quay.io/acme_corp/product-demos-ee:latest
 
 controller_organizations:
   - name: Default
+    default_environment:
+      name: product-demos
     galaxy_credentials:
       - Ansible Galaxy
       - Automation Hub
