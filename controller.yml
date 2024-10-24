@@ -3,7 +3,7 @@
 apd_ee_image_version: '24'
 apd_ee_image: quay.io/ansible-product-demos/apd-ee-{{ apd_ee_image_version }}:latest
 apd_git_repo: https://github.com/ansible/product-demos
-apd_git_repo_branch: main
+apd_git_repo_branch: jce/new-ee
 apd_verify_ssl: false
 
 controller_validate_certs: false
