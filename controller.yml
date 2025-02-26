@@ -39,6 +39,7 @@ controller_credentials:
 controller_execution_environments:
   - name: Product Demos EE
     image: '{{ apd_ee_image }}'
+    organization: Ansible Product Demos (APD)
 
 controller_projects:
   - name: Ansible Product Demos
