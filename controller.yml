@@ -56,7 +56,7 @@ controller_templates:
     inventory: Demo Inventory
     project: Ansible Product Demos
     playbook: setup_demo.yml
-    credentials: Controller Credential
+    credentials: AAP Admin Credential
     execution_environment: Product Demos EE
     allow_simultaneous: true
     survey_enabled: true
@@ -80,7 +80,7 @@ controller_templates:
     project: Ansible Product Demos
     playbook: multi_select_setup.yml
     inventory: Demo Inventory
-    credentials: Controller Credential
+    credentials: AAP Admin Credential
     execution_environment: Product Demos EE
     survey_enabled: true
     survey:
