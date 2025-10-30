@@ -1,11 +1,19 @@
 ---
 # override these in job template extra vars if needed
 apd_ee_image_version: '25'
-apd_ee_image: quay.io/ansible-product-demos/apd-ee-{{ apd_ee_image_version }}:latest
+apd_ee_image_tag: latest
+apd_ee_image: quay.io/ansible-product-demos/apd-ee-{{ apd_ee_image_version }}:{{ apd_ee_image_tag }}
 apd_git_repo: https://github.com/ansible/product-demos
 apd_git_repo_branch: main
 apd_verify_ssl: false
 
+
+## gateway resources
+aap_organizations:
+  - name: Ansible Product Demos (APD)
+
+
+## controller resources
 controller_validate_certs: false
 controller_configuration_async_delay: 3
 
@@ -51,7 +59,7 @@ controller_projects:
     wait: true
 
 controller_templates:
-  - name: "Product Demos | Single demo setup"
+  - name: "APD | Single demo setup"
     job_type: run
     inventory: Demo Inventory
     project: Ansible Product Demos
@@ -76,7 +84,7 @@ controller_templates:
             - openshift
             - satellite
 
-  - name: "Product Demos | Multi-demo setup"
+  - name: "APD | Multi-demo setup"
     project: Ansible Product Demos
     playbook: multi_select_setup.yml
     inventory: Demo Inventory
