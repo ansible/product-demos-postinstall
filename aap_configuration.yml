@@ -45,9 +45,8 @@ controller_credentials:
       verify_ssl: '{{ apd_verify_ssl }}'
 
 controller_execution_environments:
-  - name: Product Demos EE
+  - name: Ansible Product Demos EE
     image: '{{ apd_ee_image }}'
-    organization: Ansible Product Demos (APD)
 
 controller_projects:
   - name: Ansible Product Demos
@@ -65,7 +64,7 @@ controller_templates:
     project: Ansible Product Demos
     playbook: setup_demo.yml
     credentials: APD | AAP Credential
-    execution_environment: Product Demos EE
+    execution_environment: Ansible Product Demos EE
     allow_simultaneous: true
     survey_enabled: true
     survey_spec:
@@ -89,7 +88,7 @@ controller_templates:
     playbook: multi_select_setup.yml
     inventory: Demo Inventory
     credentials: APD | AAP Credential
-    execution_environment: Product Demos EE
+    execution_environment: Ansible Product Demos EE
     survey_enabled: true
     survey:
       name: ''
