@@ -43,12 +43,16 @@ controller_credentials:
       password: '{{ controller_admin_password | default("REPLACEME") }}'
       verify_ssl: '{{ apd_verify_ssl }}'
 
+controller_inventories:
+  - name: Ansible Product Demos Inventory
+    organization: Ansible Product Demos (APD)
+
 controller_execution_environments:
   - name: Product Demos EE
     image: '{{ apd_ee_image }}'
 
 controller_projects:
-  - name: APD | Ansible Product Demos
+  - name: Ansible Product Demos
     organization: Ansible Product Demos (APD)
     scm_type: git
     scm_url: '{{ apd_git_repo }}'
@@ -59,7 +63,7 @@ controller_projects:
 controller_templates:
   - name: "APD | Single demo setup"
     job_type: run
-    inventory: Demo Inventory
+    inventory: Ansible Product Demos Inventory
     project: Ansible Product Demos
     playbook: setup_demo.yml
     credentials: AAP Credential
@@ -85,7 +89,7 @@ controller_templates:
   - name: "APD | Multi-demo setup"
     project: Ansible Product Demos
     playbook: multi_select_setup.yml
-    inventory: Demo Inventory
+    inventory: Ansible Product Demos Inventory
     credentials: AAP Credential
     execution_environment: Product Demos EE
     survey_enabled: true
