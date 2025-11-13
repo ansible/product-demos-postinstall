@@ -6,6 +6,8 @@ apd_ee_image: quay.io/ansible-product-demos/apd-ee-{{ apd_ee_image_version }}:{{
 apd_git_repo: https://github.com/ansible/product-demos
 apd_git_repo_branch: main
 apd_verify_ssl: false
+apd_aap_credential_name: AAP Credential
+apd_aap_credential_org: Ansible Product Demos (APD)
 
 
 ## gateway resources
@@ -33,8 +35,8 @@ controller_credentials:
       url: https://console.redhat.com/api/automation-hub/
       auth_url: https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
 
-  - name: APD | AAP Credential
-    organization: Ansible Product Demos (APD)
+  - name: '{{ apd_aap_credential_name }}'
+    organization: '{{ apd_aap_credential_org }}'
     credential_type: Red Hat Ansible Automation Platform
     update_secrets: false
     state: exists
@@ -49,7 +51,7 @@ controller_execution_environments:
     image: '{{ apd_ee_image }}'
 
 controller_projects:
-  - name: Ansible Product Demos
+  - name: APD | Ansible Product Demos
     organization: Ansible Product Demos (APD)
     scm_type: git
     scm_url: '{{ apd_git_repo }}'
