@@ -33,7 +33,6 @@ controller_credentials:
       auth_url: https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
 
   - name: AAP Credential
-    organization: Ansible Product Demos (APD)
     credential_type: Red Hat Ansible Automation Platform
     update_secrets: false
     state: exists
