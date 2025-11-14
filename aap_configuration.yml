@@ -34,6 +34,7 @@ controller_credentials:
 
   - name: AAP Credential
     credential_type: Red Hat Ansible Automation Platform
+    organization: Ansible Product Demos (APD)
     update_secrets: false
     state: exists
     inputs:
